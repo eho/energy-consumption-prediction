@@ -376,3 +376,5 @@ $RECYCLE.BIN/
 ### project specific ignores ###
 # ignore all log files, which are saved with an `.log` extension
 *.log
+
+data/raw
