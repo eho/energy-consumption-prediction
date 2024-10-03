@@ -3,7 +3,9 @@ import requests
 import datetime
 import os
 import urllib.parse
+import pytz
 
+SYDNEY_TZ = pytz.timezone("Australia/Sydney")
 TESLA_ENDPOINT = "https://fleet-api.prd.na.vn.cloud.tesla.com"
 ENERGY_SITE_ID = "220796430229"
 
@@ -17,9 +19,15 @@ def fetch_and_save_data(access_token, date, output_dir):
     :param output_dir: Directory to save the file to
     """
     start_date = (
-        f"{datetime.datetime.combine(date, datetime.time.min).isoformat()}+10:00"
+        datetime.datetime.combine(date, datetime.time.min)
+        .astimezone(SYDNEY_TZ)
+        .isoformat()
     )
-    end_date = f"{datetime.datetime.combine(date, datetime.time.max).isoformat()}+10:00"
+    end_date = (
+        datetime.datetime.combine(date, datetime.time.max)
+        .astimezone(SYDNEY_TZ)
+        .isoformat()
+    )
     params = {
         "kind": "energy",
         "period": "day",
@@ -34,8 +42,9 @@ def fetch_and_save_data(access_token, date, output_dir):
     }
 
     try:
+        url = f"{TESLA_ENDPOINT}/api/1/energy_sites/{ENERGY_SITE_ID}/calendar_history"
         response = requests.get(
-            f"{TESLA_ENDPOINT}/api/1/energy_sites/{ENERGY_SITE_ID}/calendar_history",
+            url,
             params=urllib.parse.urlencode(params),
             headers=headers,
         )
