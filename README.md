@@ -1,22 +1,22 @@
 <h1 align="center">
-  Machine Learning Project Template
+  Energy Consumption Prediction
   <br />
-  <a href="https://github.com/eho/ml-project-template/issues">
+  <a href="https://github.com/eho/energy-consumption-prediction/issues">
     <img
       alt="GitHub issues"
-      src="https://img.shields.io/github/issues/eho/ml-project-template?logo=git&style=plastic"
+      src="https://img.shields.io/github/issues/eho/energy-consumption-prediction?logo=git&style=plastic"
     />
   </a>
-  <a href="https://github.com/eho/ml-project-template/network">
+  <a href="https://github.com/eho/energy-consumption-prediction/network">
     <img
       alt="GitHub forks"
-      src="https://img.shields.io/github/forks/eho/ml-project-template?style=plastic&logo=github"
+      src="https://img.shields.io/github/forks/eho/energy-consumption-prediction?style=plastic&logo=github"
     />
   </a>
-  <a href="https://github.com/eho/ml-project-template/stargazers">
+  <a href="https://github.com/eho/energy-consumption-prediction/stargazers">
     <img
       alt="GitHub stars"
-      src="https://img.shields.io/github/stars/eho/ml-project-template?style=plastic&logo=github"
+      src="https://img.shields.io/github/stars/eho/energy-consumption-prediction?style=plastic&logo=github"
     />
   </a>
 </h1>
