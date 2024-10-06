@@ -1,8 +1,8 @@
-## Energy Consumption Prediction
+# Energy Consumption Prediction
 
-This project is to create a machine learning model to predict energy consumption usage.
+This project is to create a machine learning model to predict energy consumption usage using historical data. 
 
-I am training the model using power usage data obtained from a Tesla Powerwall. Data points are at 5 mins interval. I am using Long Short Team Model (LSTM) as this seems to be best model for time-series data prediction.
+The dataset used for this project is obtained from a Tesla Powerwall. Data points are at 5 mins interval. I am using Long Short Team Model (LSTM) as this seems to be best model for time-series data prediction.
 
 This is my first time building a machine learning model. I have gone through serval iterations of the implementation. I initially built the model using PyTorch's LSTM module (well, that was the easy part.), I tried to use [fastai](https://docs.fast.ai)'s [Learner](https://docs.fast.ai/learner.html) for the training logic. I figured, why implement my own training loop if I can reuse an exsiting framework. So why fastai? That's probably because I had been watching fastai's deep learning course and that was the first framework I was exposed to. But soon, I was hitting with roadblocks after roadblocks with the fastai's Learner. fastai is an incredible framework. It can do a lot of things. But, the framework is just too complicated and built in too much magic to my liking.
 
