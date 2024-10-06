@@ -1,26 +1,3 @@
-<h1 align="center">
-  Energy Consumption Prediction
-  <br />
-  <a href="https://github.com/eho/energy-consumption-prediction/issues">
-    <img
-      alt="GitHub issues"
-      src="https://img.shields.io/github/issues/eho/energy-consumption-prediction?logo=git&style=plastic"
-    />
-  </a>
-  <a href="https://github.com/eho/energy-consumption-prediction/network">
-    <img
-      alt="GitHub forks"
-      src="https://img.shields.io/github/forks/eho/energy-consumption-prediction?style=plastic&logo=github"
-    />
-  </a>
-  <a href="https://github.com/eho/energy-consumption-prediction/stargazers">
-    <img
-      alt="GitHub stars"
-      src="https://img.shields.io/github/stars/eho/energy-consumption-prediction?style=plastic&logo=github"
-    />
-  </a>
-</h1>
-
 ## Energy Consumption Prediction
 
 This project is to create a machine learning model to predict energy consumption usage.
