@@ -8,4 +8,4 @@ scikit-learn
 ipywidgets
 lightning
 tensorboard
-pickle
+jsonargparse[signatures]

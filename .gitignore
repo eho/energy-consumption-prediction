@@ -378,3 +378,6 @@ $RECYCLE.BIN/
 *.log
 
 data/raw
+**/lightning_logs
+**/model_checkpoints
+

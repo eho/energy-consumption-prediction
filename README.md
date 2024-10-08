@@ -17,3 +17,39 @@ The code for prediction was a bit more trickier than anticipated. Perhaps it was
 Visualising the time-series data was also a fun exercise. `matplotlib` and `seaborn` plot the graphs with ease. But there are tons of other bells and whistles and I barely scratched the surface!
 
 Check out the notebook on how I develop and train the model.
+
+
+## Usage
+
+### Data Preparation
+
+The input data is expected to be in a csv file `data/processed/time_series_data.csv`. The path is specified in the `config.yml` (among other configuration). The data is expected to have columns on `timestamp`, `month`, `day_of_week`, `time_of_day`, `total_home_usage`.
+
+When training the model, we can specify how many features we are going to use for training. If we have additional data such as weather temperature, humidity, etc, we can add to the data file, specific the additionl feature columns in `config.yml`, the training code will use the additional features for training.
+
+If we change the number features, we also need to change `input_size` to match.
+
+`mins_per_time_step` is the time resolution between data points (time steps) in the time series data. The data I obtained from Powerwall is 5min interval.
+
+`sequence_length` is the number of time steps to use for training. I used 24 hours worth of tiime steps, ie 24 * 60 / 5 == 288 steps.
+
+
+### Configuration/Hyperparameters
+
+This project uses [Lightning CLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html). It is very flexible in configuring how to run the trainer. The configurations that were used to train to model are in `config.yml`. To train using the config file, run this command line.
+
+```bash
+python -m src.trainer fit --config src/config.yml
+```
+
+The best checkpoint file is saved to `./lightning_logs/version_3/checkpoints/`. This can be loaded into the model for inference.
+
+To predict the next 7 days' consumption from a start date, use the following command. The predictiion is saved to a plot file.  
+
+```bash
+
+CHECKPOINT=./lightning_logs/version_8/checkpoints/best-checkpoint-epoch=17-val_loss=0.18.ckpt
+python -m src.predict --model-checkpoint-path $CHECKPOINT --start-date "2024-10-01" --predict-days 7
+
+```
+
